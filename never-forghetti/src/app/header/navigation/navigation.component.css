@@ -1,0 +1,10 @@
+.navbar-nav > li{
+    list-style-type: none;
+    display:inline-block;
+    float:none;
+    
+}
+.navbar-nav {
+    width:100%;    
+    text-align: center
+}
