@@ -67,6 +67,7 @@ Vagrant.configure("2") do |config|
        apt-get update
        apt-get install npm -y
        cd ../../vagrant_data/never-forghetti
+       npm install -g @angular/cli
        npm install
     SCRIPT
     config.vm.provision "shell", inline: $startup_script
