@@ -64,10 +64,12 @@ Vagrant.configure("2") do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
     $startup_script = <<-SCRIPT 
-       apt-get update
-       apt-get install npm -y
-       cd ../../vagrant_data/never-forghetti
-       npm install
+       sudo apt-get update
+       sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+       sudo apt-get install nodejs -y
+       sudo apt-get install build-essentials -y
+       sudo cd ../../vagrant_data/never-forghetti
+       sudo npm install
     SCRIPT
     config.vm.provision "shell", inline: $startup_script
 end
