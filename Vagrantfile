@@ -66,9 +66,10 @@ Vagrant.configure("2") do |config|
     $startup_script = <<-SCRIPT 
        sudo apt-get update
        sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-       sudo apt-get install nodejs -y
-       sudo apt-get install build-essentials -y
+       sudo apt-get install -y nodejs
+       sudo apt-get install -y build-essentials
        sudo cd ../../vagrant_data/never-forghetti
+       sudo npm install -g @angular/cli
        sudo npm install
     SCRIPT
     config.vm.provision "shell", inline: $startup_script
