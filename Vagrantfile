@@ -73,4 +73,5 @@ Vagrant.configure("2") do |config|
        sudo npm install
     SCRIPT
     config.vm.provision "shell", inline: $startup_script
+  end
 end
